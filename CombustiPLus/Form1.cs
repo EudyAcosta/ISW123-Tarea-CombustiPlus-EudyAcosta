@@ -155,5 +155,10 @@ namespace CombustiPLus
                 lstDetalle.Items.Add(par.Key + " " + par.Value.ToString("0.0", Inv));
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
