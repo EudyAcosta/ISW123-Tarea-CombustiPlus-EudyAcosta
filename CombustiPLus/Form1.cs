@@ -9,7 +9,7 @@ namespace CombustiPLus
     public partial class Form1 : Form
     {
 
-        private readonly List<Despacho>despachos = new List<Despacho>();
+        private readonly List<Despacho> despachos = new List<Despacho>();
         private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
 
         public Form1()
@@ -20,7 +20,7 @@ namespace CombustiPLus
             cmbPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCombustible.Items.AddRange(new object[] { "Premium", "Regular",
                 "Gasoil" });
-            cmbPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" } );
+            cmbPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
             cmbCombustible.SelectedIndex = 0;
             cmbPago.SelectedIndex = 0;
 
@@ -38,6 +38,26 @@ namespace CombustiPLus
         private static string Dinero(decimal v)
         {
             return "RD$ " + v.ToString("N2", Inv);
+        }
+        private bool Validar()
+        {
+            if (txtPlaca.Text.Trim().Length != 7)
+            {
+                MessageBox.Show("La placa debe tener 7 caracteres.", "Dato Invalido",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (nudGalones.Value <= 0)
+            {
+                MessageBox.Show("La cantidad de galones deben ser mas que 0.", "Dato Invalido",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
+            return true;
+
+
         }
     }
 }
