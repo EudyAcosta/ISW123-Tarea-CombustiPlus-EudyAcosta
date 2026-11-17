@@ -160,6 +160,7 @@
             btnCotizar.TabIndex = 12;
             btnCotizar.Text = "Cotizar";
             btnCotizar.UseVisualStyleBackColor = true;
+            btnCotizar.Click += btnCotizar_Click;
             // 
             // btnDespachar
             // 
